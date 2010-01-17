@@ -57,7 +57,7 @@ public class GoogleDocsGateway extends AbstractThreadedManagedLifecycle  {
         
         sheet.setDocumentName(config.getAttribute("documentname"));
         
-        pollingtime = Integer.valueOf(config.getAttribute("documentname"));
+        pollingtime = Integer.valueOf(config.getAttribute("polling-in-seconds"));
         
         
 

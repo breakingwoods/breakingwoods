@@ -37,7 +37,7 @@
     <listener busidref="SpreadSheets" is-gateway="true" maxThreads="1" name="Docs">
      <property name="documentname" value="SKILLS-3-to-8"/>
      <property name="feedurl" value="http://spreadsheets.google.com/feeds/spreadsheets/private/full"/>
-     <property name="gatewayClass" value="org.jboss.soa.jbossesb.gateways.google.GoogleDocsGateway"/>
+     <property name="gatewayClass" value="org.jboss.soa.esb.gateways.google.GoogleDocsGateway"/>
      <property name="password" value="useyourpassword"/>
      <property name="polling-in-seconds" value="10"/>
      <property name="servicename" value="JBossEsb-GoogleDocs-2"/>

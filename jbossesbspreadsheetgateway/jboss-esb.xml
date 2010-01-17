@@ -38,10 +38,10 @@
      <property name="documentname" value="SKILLS-3-to-8"/>
      <property name="feedurl" value="http://spreadsheets.google.com/feeds/spreadsheets/private/full"/>
      <property name="gatewayClass" value="org.jboss.soa.jbossesb.gateways.google.GoogleDocsGateway"/>
-     <property name="password" value="rock123"/>
+     <property name="password" value="useyourpassword"/>
      <property name="polling-in-seconds" value="10"/>
      <property name="servicename" value="JBossEsb-GoogleDocs-2"/>
-     <property name="username" value="jbossesb@facilitait.com.br"/>
+     <property name="username" value="use your google/gmail account "/>
     </listener>
    </listeners>
    <actions>

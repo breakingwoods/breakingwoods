@@ -1,0 +1,4 @@
+<jbossesb-deployment>
+  <depends>jboss.esb.jbossgoogledocs.destination:service=Queue,name=jbossgoogledocs_GateWay</depends>
+  <depends>jboss.esb.jbossgoogledocs.destination:service=Queue,name=jbossgoogledocs_ESB</depends>
+</jbossesb-deployment>

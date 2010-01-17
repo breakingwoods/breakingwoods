@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<jbossesb parameterReloadSecs="5"
+ xmlns="http://anonsvn.labs.jboss.com/labs/jbossesb/trunk/product/etc/schemas/xml/jbossesb-1.1.0.xsd"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://anonsvn.labs.jboss.com/labs/jbossesb/trunk/product/etc/schemas/xml/jbossesb-1.1.0.xsd http://anonsvn.labs.jboss.com/labs/jbossesb/trunk/product/etc/schemas/xml/jbossesb-1.1.0.xsd">
+ <providers>
+  <jms-provider connection-factory="ConnectionFactory" name="JBossMessaging">
+   <jms-bus busid="jbossgoogledocsGwChannel">
+    <jms-message-filter dest-name="queue/jbossgoogledocs_GateWay" dest-type="QUEUE"/>
+   </jms-bus>
+   <jms-bus busid="jbossgoogledocsEsbChannel">
+    <jms-message-filter dest-name="queue/jbossgoogledocs_ESB" dest-type="QUEUE"/>
+   </jms-bus>
+  </jms-provider>
+  <bus-provider name="Google">
+   <bus busid="SpreadSheets">
+    <property name="bus-property" value="bus-prop-value"/>
+   </bus>
+  </bus-provider>
+ </providers>
+ <services>
+  <service category="jbossgoogledocsESBService"
+   description="Service responsible for interact with Actions based in Project jbossgoogledocs" name="jbossgoogledocsESBServiceListener">
+   <listeners>
+    <jms-listener busidref="jbossgoogledocsGwChannel" is-gateway="true"
+     maxThreads="1" name="JMS-Gateway"/>
+    <jms-listener busidref="jbossgoogledocsEsbChannel" maxThreads="1" name="JMS-ESBListener"/>
+   </listeners>
+   <actions mep="OneWay">
+    <action class="org.jboss.soa.esb.actions.SystemPrintln" name="dump">
+     <property name="message"/>
+     <property name="printfull" value="true"/>
+    </action>
+   </actions>
+  </service>
+  <service category="Google" description="Google" invmScope="GLOBAL" name="GoogleDocs">
+   <listeners>
+    <listener busidref="SpreadSheets" is-gateway="true" maxThreads="1" name="Docs">
+     <property name="documentname" value="SKILLS-3-to-8"/>
+     <property name="feedurl" value="http://spreadsheets.google.com/feeds/spreadsheets/private/full"/>
+     <property name="gatewayClass" value="org.jboss.soa.jbossesb.gateways.google.GoogleDocsGateway"/>
+     <property name="password" value="rock123"/>
+     <property name="polling-in-seconds" value="10"/>
+     <property name="servicename" value="JBossEsb-GoogleDocs-2"/>
+     <property name="username" value="jbossesb@facilitait.com.br"/>
+    </listener>
+   </listeners>
+   <actions>
+    <action class="org.jboss.soa.esb.actions.SystemPrintln" name="Log">
+     <property name="message" value="TESTE"/>
+     <property name="printfull" value="true"/>
+     <property name="outputstream" value="true"/>
+    </action>
+   </actions>
+  </service>
+ </services>
+</jbossesb>

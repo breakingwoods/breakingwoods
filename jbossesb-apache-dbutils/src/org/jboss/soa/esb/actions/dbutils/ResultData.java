@@ -3,6 +3,11 @@ package org.jboss.soa.esb.actions.dbutils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class basically is a reduced wrapper over the ResultSet
+ * @author edgar.silva@gmail.com
+ */
+
 public class ResultData implements java.io.Serializable {
 	
 	private static final long serialVersionUID = 1L;

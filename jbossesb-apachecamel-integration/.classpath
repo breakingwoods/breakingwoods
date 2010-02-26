@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/jbossall-client.jar"/>
+	<classpathentry kind="lib" path="lib/jbossesb-rosetta.jar"/>
+	<classpathentry kind="lib" path="lib/camel-core-2.1.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/APACHE_CAMEL_DEPS"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="lib" path="/opt/java/irc/irclib-1.10/irclib.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

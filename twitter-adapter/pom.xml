@@ -6,13 +6,13 @@
         <artifactId>breakingwoods</artifactId>
         <version>0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>infinispan-esb</artifactId>
+    <artifactId>twitter-adapter</artifactId>
     <packaging>jar</packaging>
-    <name>Breakingwoods :: Infinispan ESB module</name>
+    <name>Breakingwoods :: Twitter Adapter module</name>
     <dependencies>
         <dependency>
-            <groupId>org.infinispan</groupId>
-            <artifactId>infinispan-core</artifactId>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-core</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
